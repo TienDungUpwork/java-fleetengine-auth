@@ -64,7 +64,7 @@ public class ImpersonatedSigner implements Signer {
   }
 
   @VisibleForTesting
-  static ImpersonatedSigner create(String serviceAccount, GoogleCredentials defaultCredentials) {
+  public static ImpersonatedSigner create(String serviceAccount, GoogleCredentials defaultCredentials) {
     ImpersonatedCredentials impersonatedCredentials =
         createImpersonatedCredentials(serviceAccount, defaultCredentials).build();
     return new ImpersonatedSigner(
